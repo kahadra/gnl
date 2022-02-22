@@ -6,7 +6,7 @@
 /*   By: chpark <chpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 15:10:54 by chpark            #+#    #+#             */
-/*   Updated: 2022/01/21 15:16:41 by chpark           ###   ########.fr       */
+/*   Updated: 2022/02/22 12:56:40 by chpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	now = make_lst(&head, fd);
+	if (!now)
+		return (NULL);
 	line = now->line;
 	now->line = NULL;
 	line = read_gnl(fd, line);
