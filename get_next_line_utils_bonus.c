@@ -6,7 +6,7 @@
 /*   By: chpark <chpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 12:28:16 by chpark            #+#    #+#             */
-/*   Updated: 2022/01/25 13:31:21 by chpark           ###   ########.fr       */
+/*   Updated: 2022/02/24 10:54:38 by chpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strndup(const char *str, size_t n)
 	size_t		i;
 	char		*s;
 
-	s = (char *)malloc(sizeof(char) * (n));
+	s = (char *)malloc(sizeof(char) * (n + 1));
 	if (!s)
 		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < n && str[i])
 	{
 		s[i] = str[i];
 		i++;
