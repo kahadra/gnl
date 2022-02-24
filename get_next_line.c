@@ -67,8 +67,6 @@ char	*read_gnl(int fd, char *line)
 	ssize_t	n;
 
 	buf = malloc(sizeof(char) * BUFFER_SIZE);
-	if (!buf)
-		return (NULL);
 	while (!ft_strchr(line, '\n'))
 	{
 		n = read(fd, buf, BUFFER_SIZE);
